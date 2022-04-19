@@ -1,37 +1,44 @@
 @tailwind base;
 @layer base {
-    body{
+    body {
         @apply font-IRANSans
     }
 }
-[x-cloak] { display: none !important;}
-.TopSwiper_Container > .TopSwiperNext  , .TopSwiper_Container > .TopSwiperPrev {
+[x-cloak] {
+    display: none !important;
+}
+
+.TopSwiper_Container > .TopSwiperNext, .TopSwiper_Container > .TopSwiperPrev {
     @apply w-10 h-14 bg-white rounded-2xl bg-opacity-50  hidden  lg:flex   backdrop-blur-sm border text-gray-400
 }
+
 .TopSwiper_Container > .TopSwiperNext {
     @apply -right-3
 }
+
 .TopSwiper_Container > .TopSwiperPrev {
     @apply -left-3
 }
 
-.TopSwiper_Container > .TopSwiperNext::after  , .TopSwiper_Container > .TopSwiperPrev::after{
+.TopSwiper_Container > .TopSwiperNext::after, .TopSwiper_Container > .TopSwiperPrev::after {
     @apply text-lg text-gray-700 font-bold;
 }
 
 /*slider slide offer */
 
-.SlidSwiper_Container > .SLidSwiperNext  , .SlidSwiper_Container > .SlidSwiperPrev {
+.SlidSwiper_Container > .SLidSwiperNext, .SlidSwiper_Container > .SlidSwiperPrev {
     @apply w-10 h-14 bg-white rounded-2xl bg-opacity-50  hidden  lg:flex   backdrop-blur-sm border text-gray-400
 }
+
 .SlidSwiper_Container > .SLidSwiperNext {
     @apply -right-4
 }
+
 .SlidSwiper_Container > .SlidSwiperPrev {
     @apply -left-4
 }
 
-.SlidSwiper_Container > .SLidSwiperNext::after  , .SlidSwiper_Container > .SlidSwiperPrev::after{
+.SlidSwiper_Container > .SLidSwiperNext::after, .SlidSwiper_Container > .SlidSwiperPrev::after {
     @apply text-lg text-gray-700 font-bold;
 }
 
@@ -39,16 +46,24 @@
 @layer components {
     .text-color {
         @apply text-gray-700 dark:text-gray-400
-        }
-    .border-style {
-        @apply  border-gray-300
     }
+
+    .border-style {
+        @apply border-gray-300
+    }
+
     .flex-center {
         @apply flex items-center justify-center
     }
-    .custom-transition{
+
+    .custom-transition {
         @apply transition-all duration-300 ease-in
     }
+
+    .scroll_hidden {
+        @apply h-full overflow-hidden;
+    }
+
 }
 @tailwind utilities;
 input::-webkit-outer-spin-button,
@@ -56,6 +71,7 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input[type="radio"]:checked + label span {
     @apply text-gray-700;
 }
@@ -65,20 +81,36 @@ input[type="radio"]:checked + label span {
     font-style: normal;
     font-weight: normal;
     src: url('../fonts/eot/IRANSansWeb.eot');
-    src: url('../fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-    url('../fonts/woff2/IRANSansWeb.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-    url('../fonts/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url('../fonts/ttf/IRANSansWeb.ttf') format('truetype');
+    src: url('../fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'), /* IE6-8 */ url('../fonts/woff2/IRANSansWeb.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('../fonts/woff/IRANSansWeb.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../fonts/ttf/IRANSansWeb.ttf') format('truetype');
 }
+
 input {
     outline: none;
 }
-.input-favorite::placeholder{
+
+.input-favorite::placeholder {
     padding-left: 10px;
 }
-.slideHightContainer , .swiper , .swiper-wrapper {
-        @apply h-auto
+
+.slideHightContainer, .swiper, .swiper-wrapper {
+    @apply h-auto
 }
+
 .swiper-slide {
-  @apply w-5
+    @apply w-5
+}
+
+.handle_direction .rtl_flag {
+    @apply flex !important;
+}
+
+.handle_direction  .ltr_flag {
+    @apply hidden !important;
+}
+.handle_direction.rtl  .rtl_flag {
+    @apply hidden !important;
+}
+
+.handle_direction.rtl .ltr_flag {
+    @apply flex !important;
 }
