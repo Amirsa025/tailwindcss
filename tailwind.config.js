@@ -3,6 +3,7 @@ module.exports = {
   content: ["./src/**/*.{html,js}",
     "./node_modules/flowbite/**/*.js"
   ],
+  darkMode: 'class',
   theme: {
     container: {
       center: true,
@@ -12,6 +13,9 @@ module.exports = {
       padding : {
         "md":"56%",
         "lg":"65"
+      },
+      backgroundPosition : {
+        'left-center' : 'left 0.5rem center'
       },
       fontFamily: {
         IRANSans: ['IRANSans']
@@ -27,6 +31,11 @@ module.exports = {
         'silver': '#ecebff',
         'bubble-gum': '#ff77e9',
         'bermuda': '#78dcca',
+        dark : {
+          800 : '#232326',
+          700:'#323236',
+          600:'#3b3b41'
+        }
       },
       screens: {
         'sm': '640px',
@@ -44,9 +53,18 @@ module.exports = {
         '2xl': '1536px',
         // => @media (min-width: 1536px) { ... }
       },
-
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': {transform: 'rotate(-8deg)'},
+          '50%': {transform: 'rotate(8deg)'},
+        }
+      },
     },
   },
+
   plugins:[
     require('flowbite/plugin'),
     require('@tailwindcss/line-clamp'),

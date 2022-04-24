@@ -45,11 +45,11 @@
 @tailwind components;
 @layer components {
     .text-color {
-        @apply text-gray-700 dark:text-gray-400
+        @apply text-gray-700 dark:text-gray-300
     }
 
     .border-style {
-        @apply border-gray-300
+        @apply border-gray-300 dark:border-gray-600
     }
 
     .flex-center {
@@ -70,6 +70,14 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+@layer utilities {
+    .text-rtl{
+        direction: rtl;
+    }
+    .text-ltr{
+        direction: ltr;
+    }
 }
 
 input[type="radio"]:checked + label span {
@@ -113,4 +121,25 @@ input {
 
 .handle_direction.rtl .ltr_flag {
     @apply flex !important;
+}
+
+.fixed_navbar .navbar_item{
+    @apply text-color ;
+}
+.fixed_navbar .navbar_item.active{
+    @apply text-purple dark:text-indigo-400 ;
+}
+.handle_darkmode .moon  {
+    @apply block
+}
+
+.handle_darkmode .sun  {
+    @apply hidden
+}
+
+.handle_darkmode.darkmode .moon {
+    @apply hidden !important;
+}
+.handle_darkmode.darkmode .sun {
+    @apply block !important;
 }
